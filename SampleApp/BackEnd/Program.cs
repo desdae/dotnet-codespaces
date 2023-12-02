@@ -34,6 +34,14 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
+app.MapGet("aoc/1", () =>
+{
+    var solver = new AdventofCode.Day1.Solver();
+    return solver.Solve();
+})
+.WithOpenApi();
+
+
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

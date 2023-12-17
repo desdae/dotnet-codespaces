@@ -41,6 +41,18 @@ app.MapGet("aoc/1", () =>
 })
 .WithOpenApi();
 
+app.MapGet("recList", () =>
+{
+    return SF.RecipeData.GetRecipesList();
+})
+.WithOpenApi();
+
+app.MapGet("recDict", () =>
+{
+    return SF.RecipeData.GetRecipesDict();
+})
+.WithOpenApi();
+
 
 app.Run();
 
